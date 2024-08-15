@@ -6,6 +6,15 @@ export interface User {
     first: string;
     last: string;
   };
+  location: {
+    street: {
+      number: number;
+      name: string;
+    }
+    city: string;
+    state: string;
+    country: string;
+  };
   photoPage: number;
 }
 
@@ -22,7 +31,7 @@ export const useUserStore = create<UserStore>((set, get) => ({
   users: [],
   selectedUser: null,
   loading: false,
-  page: 0,
+  page: 1,
   fetchUsers: async () => {
     const { page, users } = get();
     set({ loading: true });
@@ -36,9 +45,9 @@ export const useUserStore = create<UserStore>((set, get) => ({
           photoPage: users.length + index + 1
         }))
       ];
-      set({ 
-        users: newUsers, 
-        page: page + 1, 
+      set({
+        users: newUsers,
+        page: page + 1,
         loading: false,
         selectedUser: newUsers.length > 0 && !get().selectedUser ? newUsers[0] : get().selectedUser
       });
