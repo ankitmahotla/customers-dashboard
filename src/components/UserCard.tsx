@@ -20,12 +20,8 @@ function UserCard({ user }: { user: User }) {
             className={`border-b-2 border-slate-200 cursor-pointer ${isSelected ? 'bg-slate-200' : 'bg-transparent'}`} 
             onClick={handleClick}
         >
-            <div className='py-4 px-6'>
-                <h3 className='text-xl font-medium mb-2'>{user.name.first} {user.name.last}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellendus enim accusantium modi sapiente saepe hic quae
-                    Repellendus enim accusantium modi sapiente saepe hic quae
-                </p>
+            <div className='py-4 px-2 md:px-6'>
+                <h3 className='text-lg md:text-xl font-medium mb-2'>{user.name.title} {user.name.first} {user.name.last}</h3>
             </div>
         </div>
     )

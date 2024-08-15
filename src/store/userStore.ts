@@ -36,7 +36,7 @@ export const useUserStore = create<UserStore>((set, get) => ({
     const { page, users } = get();
     set({ loading: true });
     try {
-      const res = await fetch(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`);
+      const res = await fetch(`https://randomuser.me/api/?page=${page}&results=20&seed=abc`);
       const data = await res.json();
       const newUsers = [
         ...users,

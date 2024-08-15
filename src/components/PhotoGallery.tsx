@@ -15,11 +15,11 @@ function PhotoGallery({ photoPage }: { photoPage: number | undefined }) {
   const { photos, loading, error } = usePhotos(photoPage);
 
   const photoGrid = useMemo(() => (
-    <div className="grid grid-cols-3 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-10">
       {photos.map(photo => (
         <Card
           key={photo.id}
-          className="w-[300px] h-[400px] rounded-[4%] overflow-hidden transition-all duration-300"
+          className="w-[250px] md:w-[300px] h-[400px] rounded-[4%] overflow-hidden transition-all duration-300"
         >
           <img
             src={photo.download_url}
