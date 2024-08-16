@@ -4,9 +4,9 @@ import { Card } from './ui/card';
 import { Skeleton } from './ui/skeleton';
 
 const SkeletonGrid = () => (
-  <div className="grid grid-cols-3 gap-10 mt-10">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-10 mt-10">
     {[...Array(9)].map((_, index) => (
-      <Skeleton key={index} className="w-[300px] h-[400px] rounded-[4%]" />
+      <Skeleton key={index} className="w-[230px] md:w-[300px] h-[300px] md:h-[400px] rounded-md" />
     ))}
   </div>
 );
@@ -19,7 +19,7 @@ function PhotoGallery({ photoPage }: { photoPage: number | undefined }) {
       {photos.map(photo => (
         <Card
           key={photo.id}
-          className="w-[250px] md:w-[300px] h-[400px] rounded-[4%] overflow-hidden transition-all duration-300"
+          className="w-[230px] md:w-[300px] h-[300px] md:h-[400px] rounded-md overflow-hidden transition-all duration-300"
         >
           <img
             src={photo.download_url}
