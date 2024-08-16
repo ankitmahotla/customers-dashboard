@@ -21,7 +21,7 @@ function UserCard({ user }: { user: User }) {
             onClick={handleClick}
         >
             <div className='py-4 px-2 md:px-6'>
-                <h3 className='text-lg md:text-xl font-medium mb-2'>{user.name.title} {user.name.first} {user.name.last}</h3>
+                <h3 className='text-sm md:text-xl font-medium mb-2'>{user.name.title} {user.name.first} {user.name.last}</h3>
             </div>
         </div>
     )
